@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sana Ansari — UI/UX Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F6F7F5;
+      --surface: #FFFFFF;
+      --border: #E2E5DF;
+      --border-dark: #C8CEC4;
+      --text-primary: #0E120A;
+      --text-secondary: #353F32;
+      --text-tertiary: #636B5F;
+      --accent: #2F543D;
+      --accent-light: #E8F0E8;
+      --accent-mid: #3A6448;
+      --font: 'Montserrat', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(246, 247, 245, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* LAYOUT */
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 2.5rem; }
+
+    /* HERO */
+    .hero { padding: 6rem 0 4rem; border-bottom: 1px solid var(--border); }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: end;
+    }
+    .hero-left h1 {
+      font-size: clamp(52px, 8vw, 84px);
+      font-weight: 600;
+      line-height: 0.92;
+      color: var(--text-primary);
+      letter-spacing: -0.03em;
+    }
+    .hero-left h1 em {
+      font-style: normal;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .hero-right { padding-bottom: 4px; }
+    .hero-eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .hero-bio {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+    .hero-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .hero-link {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: var(--text-secondary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--border-dark);
+      border-radius: 100px;
+      padding: 7px 16px;
+      background: var(--surface);
+      transition: all 0.15s;
+    }
+    .hero-link:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+    .hero-link svg { width: 13px; height: 13px; }
+
+    /* WORK SECTION */
+    .work-section { padding: 4rem 0 6rem; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+    }
+
+    /* FILTER TABS */
+    .filter-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+    .filter-btn {
+      font-family: var(--font);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: var(--text-secondary);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 5px 14px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    /* PROJECT LAYOUTS */
+    .projects-wrap { display: flex; flex-direction: column; gap: 1.75rem; }
+    .row-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+    .row-featured { display: grid; grid-template-columns: 1fr 1.6fr; gap: 1.75rem; align-items: stretch; }
+
+    /* BASE CARD */
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .project-card:hover {
+      box-shadow: 0 6px 24px rgba(28, 35, 32, 0.08);
+      transform: translateY(-2px);
+    }
+    .project-card.hidden { display: none; }
+
+    .card-img { width: 100%; height: 230px; object-fit: cover; display: block; background: var(--bg); cursor: pointer; }
+    .card-img-sm { width: 100%; height: 190px; object-fit: cover; display: block; background: var(--bg); cursor: pointer; }
+    .card-img-tall { width: 100%; height: 320px; object-fit: cover; display: block; background: var(--bg); cursor: pointer; }
+    .card-video { width: 100%; height: 230px; object-fit: cover; display: block; cursor: pointer; }
+    .card-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-light);
+    }
+    .card-img-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border);
+      height: 190px;
+      cursor: pointer;
+    }
+    .card-img-duo img { width: 100%; height: 100%; object-fit: cover; }
+
+    .card-body { padding: 1.35rem 1.5rem 1.6rem; flex: 1; display: flex; flex-direction: column; }
+    .card-year {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-bottom: 0.55rem;
+    }
+    .card-title-sm {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-bottom: 0.55rem;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-weight: 400;
+      flex: 1;
+      margin-bottom: 1.1rem;
+    }
+    .card-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 0.75rem; }
+    .tag {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: var(--text-secondary);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 7px;
+    }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+    .card-link {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--accent);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      border: 1px solid var(--accent-light);
+      border-radius: 100px;
+      padding: 5px 13px;
+      background: var(--accent-light);
+      transition: all 0.15s;
+    }
+    .card-link:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* FEATURED HORIZONTAL CARD */
+    .featured-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .featured-card:hover {
+      box-shadow: 0 6px 24px rgba(28, 35, 32, 0.08);
+      transform: translateY(-2px);
+    }
+    .featured-card.hidden { display: none; }
+    .featured-img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; display: block; cursor: pointer; }
+    .featured-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--accent-light);
+    }
+    .featured-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .featured-title {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .featured-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      font-weight: 400;
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    /* CREDITS */
+    .credits-toggle {
+      width: 100%;
+      background: none;
+      border: none;
+      border-top: 1px solid var(--border);
+      padding: 0.6rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-family: var(--font);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      transition: background 0.15s;
+    }
+    .credits-toggle:hover { background: var(--bg); color: var(--text-secondary); }
+    .credits-toggle .chev { transition: transform 0.2s; }
+    .credits-panel { display: none; padding: 0.85rem 1.25rem 1rem; border-top: 1px solid var(--border); background: var(--bg); }
+    .credits-panel.open { display: block; }
+    .credits-panel p { font-size: 11px; color: var(--text-tertiary); margin-bottom: 0.35rem; line-height: 1.6; }
+    .credits-panel a { color: var(--text-secondary); }
+    .credits-cat { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0.65rem 0 0.3rem; }
+
+    /* CONTACT */
+    .contact-section { border-top: 1px solid var(--border); padding: 5rem 0 6rem; background: var(--surface); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-left h2 {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      line-height: 1.0;
+      margin-bottom: 1rem;
+    }
+    .contact-left h2 em { font-style: normal; color: var(--accent); font-weight: 600; }
+    .contact-sub { font-size: 14px; color: var(--text-secondary); line-height: 1.75; font-weight: 400; }
+    .contact-right { padding-top: 0.5rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 10px; }
+    .contact-link {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      background: var(--bg);
+      transition: all 0.15s;
+    }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+    .contact-link svg { width: 16px; height: 16px; opacity: 0.6; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg);
+    }
+    footer p { font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.02em; }
+
+    /* RESPONSIVE */
+
+    /* Tablet */
+    @media (max-width: 980px) {
+      .container { padding: 0 1.75rem; }
+      .row-3 { grid-template-columns: 1fr 1fr; }
+      .row-featured { grid-template-columns: 1fr; }
+      .row-featured > div:last-child { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; }
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-img { min-height: 260px; height: 260px; }
+      .card-img-tall { height: 260px; }
+    }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      nav { padding: 0 1.25rem; height: 54px; }
+      .container { padding: 0 1.25rem; }
+      .hero { padding: 3rem 0 2.5rem; }
+      .hero-inner { grid-template-columns: 1fr; gap: 1.75rem; }
+      .hero-left h1 { font-size: clamp(40px, 14vw, 56px); }
+      .work-section { padding: 2.5rem 0 4rem; }
+      .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .filter-tabs { width: 100%; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; }
+      .row-3 { grid-template-columns: 1fr; gap: 1.25rem; }
+      .row-featured { grid-template-columns: 1fr; gap: 1.25rem; }
+      .row-featured > div:last-child { grid-template-columns: 1fr; gap: 1.25rem; }
+      .projects-wrap { gap: 1.25rem; }
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-img { min-height: 220px; height: 220px; }
+      .featured-body { padding: 1.5rem; }
+      .card-img-tall { height: 240px; }
+      .card-img, .card-video { height: 200px; }
+      .card-img-sm, .card-img-duo { height: 170px; }
+      .contact-section { padding: 3.5rem 0 4rem; }
+      .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+      footer { flex-direction: column; gap: 0.4rem; text-align: center; }
+    }
+
+    @media (max-width: 400px) {
+      .hero-left h1 { font-size: 38px; }
+      .featured-title { font-size: 18px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .project-card, .featured-card { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="nav-logo">Sana Ansari</a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1>Sana<br><em>Ansari</em></h1>
+        </div>
+        <div class="hero-right">
+          <p class="hero-eyebrow">UI/UX Designer</p>
+          <p class="hero-bio">UI/UX designer with dual certificates in Web Design and User Experience &amp; Interaction Design from Mission College. I bring both design and front-end development skills — from wireframing to building for the web. Actively seeking opportunities.</p>
+          <div class="hero-links">
+            <a href="https://www.linkedin.com/in/sanauansari/" target="_blank" rel="noopener" class="hero-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <a href="mailto:sanauansari@gmail.com" class="hero-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+              Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work-section" id="work">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Selected work</p>
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="ux">UX Design</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+          <button class="filter-btn" data-filter="motion">Motion</button>
+        </div>
+      </div>
+
+      <div class="projects-wrap">
+
+        <!-- ROW 1: 3 small cards -->
+        <div class="row-3">
+
+          <!-- Ace Tennis -->
+          <div class="project-card" data-category="web">
+            <img class="card-img-sm" src="images/tennis.jpg" loading="lazy" alt="Ace Tennis Academy website on laptop mockup"
+              onclick="window.open('projects/ace-tennis.html', '_blank')"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="card-placeholder card-img-sm" style="display:none; background:#0a2240; cursor:pointer;" onclick="window.open('projects/ace-tennis.html', '_blank')">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20"/></svg>
+            </div>
+            <div class="card-body">
+              <p class="card-year">Fall 2024 · Web</p>
+              <p class="card-title-sm">Ace Tennis Academy</p>
+              <p class="card-desc">Responsive multi-page website for a fictional tennis academy. Built as a team of three with full booking and checkout flow.</p>
+              <div class="card-tags"><span class="tag">HTML/CSS</span><span class="tag">Team Project</span></div>
+              <div class="card-footer">
+                <a href="https://sanauansari.github.io/ace-tennis-academy/" target="_blank" rel="noopener" class="card-link">
+                  View site
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <button class="credits-toggle" onclick="toggleCredits(this)">
+              <span>Asset credits</span><span class="chev">›</span>
+            </button>
+            <div class="credits-panel">
+              <p class="credits-cat">Images</p>
+              <p>Images sourced from <a href="https://stock.adobe.com" target="_blank">Adobe Stock</a>. Full credits to be added.</p>
+              <p class="credits-cat">Mockup</p>
+              <p>Laptop mockup — <a href="https://www.behance.net/gallery/180625045/Free-Laptop-Mockup?tracking_source=search_projects|free+website+mockup&l=1" target="_blank">Behance</a></p>
+            </div>
+          </div>
+
+          <!-- A Place at the Table -->
+          <div class="project-card" data-category="graphic">
+            <div class="card-img-duo" onclick="window.open('projects/place-at-table.html', '_blank')">
+              <img src="images/place-at-table.jpg" loading="lazy" alt="A Place at the Table front cover" onerror="this.style.background='#EEF1EC';">
+              <img src="images/place-at-table.jpg" loading="lazy" alt="A Place at the Table back cover" style="object-position:right;" onerror="this.style.background='#E0EBE2';">
+            </div>
+            <div class="card-body">
+              <p class="card-year">Fall 2025 · Graphic Design</p>
+              <p class="card-title-sm">A Place at the Table</p>
+              <p class="card-desc">Full book jacket redesign for the novel by Faruqi &amp; Shovan. Spice platter pattern and cooking utensil motifs.</p>
+              <div class="card-tags"><span class="tag">Print</span><span class="tag">Typography</span></div>
+            </div>
+            <button class="credits-toggle" onclick="toggleCredits(this)">
+              <span>Asset credits</span><span class="chev">›</span>
+            </button>
+            <div class="credits-panel">
+              <p class="credits-cat">Cover assets</p>
+              <p>1. HMH logo — <a href="https://commons.wikimedia.org/wiki/File:Houghton_Mifflin_Harcourt_(HMH)_logo_2024.svg" target="_blank">Wikimedia Commons</a></p>
+              <p>2. Mosque — Rawpixel.com, <a href="https://stock.adobe.com/images/png-flat-illustration-of-ramadan-mosque-architecture-silhouette/1224325643" target="_blank">Adobe Stock</a></p>
+              <p>3. Bubble tea — Kseniia Kosikova, <a href="https://stock.adobe.com/images/cartoon-bubble-tea-or-pearl-milk-tea-isolated-on-white/562417519" target="_blank">Adobe Stock</a></p>
+              <p>4. Naan — FOOD, <a href="https://stock.adobe.com/images/a-detailed-illustration-of-a-single-piece-of-freshly-baked-naan-flatbread-on-a-white-background/1722699346" target="_blank">Adobe Stock</a></p>
+              <p>5. Masala chai — Touaha, <a href="https://stock.adobe.com/images/steaming-hot-masala-chai-in-glass-traditional-indian-beverage-drink-photography-on-transparent-background/1606369392" target="_blank">Adobe Stock</a></p>
+              <p>6. Menorah — Bohdan, <a href="https://stock.adobe.com/images/golden-menorah-with-blue-candles-and-flames-for-jewish-hanukkah-holiday-celebration/1735991042" target="_blank">Adobe Stock</a></p>
+              <p>7. Indian food watercolor — Thi Le, <a href="https://stock.adobe.com/images/indian-food-watercolor-style-png-background/615389721" target="_blank">Adobe Stock</a></p>
+              <p>8. Cardamom — shornagraphiclab, <a href="https://stock.adobe.com/images/close-up-watercolor-illustration-of-green-cardamom-pods-and-seeds-isolated-on-transparent-background/1687317321" target="_blank">Adobe Stock</a></p>
+              <p>9. Kitchen utensils — barks, <a href="https://stock.adobe.com/images/hanging-kitchen-utensil-vector-illustration/555025472" target="_blank">Adobe Stock</a></p>
+              <p>10. Chicken biryani — Rawpixel.com, <a href="https://stock.adobe.com/images/png-traditional-spicy-chicken-biryani/1296893155" target="_blank">Adobe Stock</a></p>
+              <p>11. Bunting — Sunil, <a href="https://stock.adobe.com/images/fourth-of-july-bunting-usa-independence-day-vector-illustration/1522533304" target="_blank">Adobe Stock</a></p>
+              <p class="credits-cat">Author photos</p>
+              <p>12. Saadia Faruqi — <a href="https://saadiafaruqi.com/about/" target="_blank">saadiafaruqi.com</a></p>
+              <p>13. Laura Shovan — <a href="https://www.highlightsfoundation.org/faculty/laura-shovan/" target="_blank">Highlights Foundation</a></p>
+            </div>
+          </div>
+
+          <!-- Secret of the Old Clock -->
+          <div class="project-card" data-category="graphic">
+            <img class="card-img-sm" src="images/old-clock.jpg" loading="lazy" alt="The Secret of the Old Clock book cover redesign"
+              onclick="window.open('projects/old-clock.html', '_blank')"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="card-placeholder card-img-sm" style="display:none; cursor:pointer;" onclick="window.open('projects/old-clock.html', '_blank')">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            </div>
+            <div class="card-body">
+              <p class="card-year">Fall 2025 · Graphic Design</p>
+              <p class="card-title-sm">The Secret of the Old Clock</p>
+              <p class="card-desc">Nancy Drew book jacket redesign — front, back, and spine. Teal and gold palette with vintage mystery motifs.</p>
+              <div class="card-tags"><span class="tag">Print</span><span class="tag">Typography</span></div>
+            </div>
+            <button class="credits-toggle" onclick="toggleCredits(this)">
+              <span>Asset credits</span><span class="chev">›</span>
+            </button>
+            <div class="credits-panel">
+              <p class="credits-cat">Cover assets</p>
+              <p>1. Flashlight banner — Роман Ярощук, <a href="https://stock.adobe.com/images/flashlight-banner-with-flashlight-and-ray-of-light-vector-illustration/448797744" target="_blank">Adobe Stock</a></p>
+              <p>2. Flashlight — dacianlogan, <a href="https://stock.adobe.com/images/flashlight-illustration/88221350" target="_blank">Adobe Stock</a></p>
+              <p>3. Clock charm — Hans Malm, <a href="https://stock.adobe.com/images/early-twentieth-century-timepiece-charm/1743973320" target="_blank">Adobe Stock</a></p>
+              <p>4. Dirt road — YIfan, <a href="https://stock.adobe.com/images/a-dirt-road-with-a-black-fence-on-each-side-surrounded-by-green-grass-and-wildflowers-in-the-springtime/1342665498" target="_blank">Adobe Stock</a></p>
+              <p>5. Courtroom — Nongkhane, <a href="https://stock.adobe.com/images/bankruptcy-hearing-process-courtroom-legal-documents-serious-environment-closeup-view-justice-and-accountability/1373781040" target="_blank">Adobe Stock</a></p>
+              <p>6. Blue car — NIRJANA, <a href="https://stock.adobe.com/images/blue-car-rear-view-isolated-on-white-background-n-modern-vehicle-backside-for-auto-design-transport-concepts-and-marketing-use/1509213724" target="_blank">Adobe Stock</a></p>
+              <p>7. Magnifying glass — BillionPhotos.com, <a href="https://stock.adobe.com/images/magnifying-glass-isolated-on-a-white-background/536979520" target="_blank">Adobe Stock</a></p>
+              <p class="credits-cat">Mockup</p>
+              <p>Book mockup — Avelina Studio, <a href="https://avelinastudio.com/product/free-book-mockup-front-back-spine/" target="_blank">avelinastudio.com</a></p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ROW 2: Featured Food Waste -->
+        <div class="featured-card" data-category="ux">
+          <img class="featured-img" src="images/food-waste-mobile-2.jpg" loading="lazy" alt="Reduce Food Waste mobile app"
+            style="object-fit: contain; background: #f0f9f4; padding: 1rem;"
+            onclick="window.open('projects/food-waste.html', '_blank')"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="card-placeholder" style="display:none; min-height:220px; background:#EEF1EC;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1"><rect x="5" y="2" width="14" height="20" rx="2"/></svg>
+          </div>
+          <div class="featured-body">
+            <div>
+              <p class="featured-label">UX Design · 2025–2026</p>
+              <p class="featured-title">Reduce Food Waste App</p>
+              <p class="featured-desc">A two-phase UX project. Phase 1 (GDS 070) covered the full mobile experience — virtual fridge, pantry tracking, recipe suggestions, and QR scanning. Phase 2 (GDS 077) extended the design to Apple Watch, with expiry alerts, cooking timers, and chef coaching sessions.</p>
+              <div class="card-tags">
+                <span class="tag">UX Design</span>
+                <span class="tag">Mobile</span>
+                <span class="tag">Smartwatch</span>
+                <span class="tag">Figma</span>
+              </div>
+            </div>
+          </div>
+          <button class="credits-toggle" onclick="toggleCredits(this)" style="border-top: 1px solid var(--border);">
+            <span>Project details</span><span class="chev">›</span>
+          </button>
+          <div class="credits-panel">
+            <p class="credits-cat">Problem</p>
+            <p>Food is often forgotten in pantries and fridges and thrown away before it's used — people forget what they have, aren't sure if it's still safe to eat, or don't know how to use up leftovers and odd ingredients.</p>
+            <p class="credits-cat">Solution</p>
+            <p>Tracks and helps use food before it expires — suggests recipes from available ingredients, sends expiration reminders, and shows a freshness guide for items in a virtual pantry and fridge. Phase 1 covered the mobile app; Phase 2 extended it to a smartwatch companion with quick-access reminders, recipe suggestions, and voice commands.</p>
+            <p class="credits-cat">Target users</p>
+            <p>College students and young professionals, environmentally conscious consumers, parents involving kids in food prep, and roommates sharing groceries.</p>
+            <p class="credits-cat">Key features</p>
+            <p>Voice command integration, user-defined push notifications, quick-glance fridge/pantry view, expiration reminders, shopping list sync, and voice-assisted cooking mode.</p>
+          </div>
+          <button class="credits-toggle" onclick="toggleCredits(this)" style="border-top: 1px solid var(--border);">
+            <span>Asset credits</span><span class="chev">›</span>
+          </button>
+          <div class="credits-panel">
+            <p class="credits-cat">Images</p>
+            <p>Images sourced from <a href="https://stock.adobe.com" target="_blank">Adobe Stock</a> and <a href="https://unsplash.com" target="_blank">Unsplash</a>. Full credits to be added.</p>
+          </div>
+        </div>
+
+        <!-- ROW 3: Pixel Pioneers + Motion stack -->
+        <div class="row-featured">
+
+          <!-- Pixel Pioneers -->
+          <div class="project-card" data-category="ux">
+            <img class="card-img-tall"
+              src="images/pixel-pioneers.png" loading="lazy"
+              alt="Pixel Pioneers app screens"
+              onclick="window.open('projects/pixel-pioneers.html', '_blank')"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="card-placeholder card-img-tall" style="display:none;">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1"><rect x="5" y="2" width="14" height="20" rx="2"/></svg>
+            </div>
+            <div class="card-body">
+              <p class="card-year">Spring 2026 · UX Design</p>
+              <p class="card-title">Pixel Pioneers — Coding Adventure</p>
+              <p class="card-desc">Game-based learning app for 3rd graders. Block-based puzzles, mini game-building, and unlockable rewards. Meets California CS Standard 3-5.CS.2.</p>
+              <div class="card-tags"><span class="tag">Education</span><span class="tag">Mobile</span><span class="tag">Figma</span></div>
+              <div class="card-footer">
+                <a href="https://sites.google.com/view/sana-ansari-gds72-spring2026/home" target="_blank" rel="noopener" class="card-link">
+                  View case study
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <button class="credits-toggle" onclick="toggleCredits(this)">
+              <span>Project details</span><span class="chev">›</span>
+            </button>
+            <div class="credits-panel">
+              <p class="credits-cat">Background</p>
+              <p>Supports California Computer Science Standard 3-5.CS.2, teaching students how hardware and software work together through interactive coding activities and simple game-building lessons.</p>
+              <p class="credits-cat">Objective</p>
+              <p>Introduces third-grade students to beginner coding concepts through fun, interactive, game-based learning experiences.</p>
+              <p class="credits-cat">Target audience</p>
+              <p>3rd grade students, ages 7–8, beginner coding learners.</p>
+              <p class="credits-cat">Key features</p>
+              <p>Block-based coding lessons, interactive puzzles and challenges, mini game-building activities, unlockable rewards and badges, kid-friendly visuals and animations, and a guide character with hints and support.</p>
+              <p class="credits-cat">User task flow</p>
+              <p>Third grade students need a fun, hands-on, interactive way to explore basic coding concepts so they can develop problem-solving skills and create their own games.</p>
+            </div>
+            <button class="credits-toggle" onclick="toggleCredits(this)">
+              <span>Asset credits</span><span class="chev">›</span>
+            </button>
+            <div class="credits-panel">
+              <p class="credits-cat">Images</p>
+              <p>Images sourced from <a href="https://stock.adobe.com" target="_blank">Adobe Stock</a> and <a href="https://unsplash.com" target="_blank">Unsplash</a>. Full credits to be added.</p>
+            </div>
+          </div>
+
+          <!-- Motion stack -->
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+
+            <!-- Hajj Mubarak -->
+            <div class="project-card" data-category="motion">
+              <video class="card-img" autoplay loop muted playsinline
+                onclick="window.open('projects/hajj-mubarak.html', '_blank')">
+                <source src="images/hajj-mubarak.mp4" type="video/mp4">
+              </video>
+              <div class="card-placeholder card-img" style="display:none;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1"><circle cx="12" cy="5" r="3"/><path d="M12 8v8M8 20h8"/></svg>
+              </div>
+              <div class="card-body">
+                <p class="card-year">Spring 2026 · Motion Graphics</p>
+                <p class="card-title-sm">Hajj Mubarak — Animated Greeting Card</p>
+                <p class="card-desc">Original animated card in After Effects — no photos or found graphics. Animated mosque silhouettes, crescent moon, and typography from scratch.</p>
+                <div class="card-tags"><span class="tag">After Effects</span><span class="tag">Illustration</span></div>
+              </div>
+            </div>
+
+            <!-- Paris Baguette -->
+            <div class="project-card" data-category="motion">
+              <video class="card-video" autoplay loop muted playsinline onclick="window.open('projects/paris-baguette.html', '_blank')">
+                <source src="images/paris-baguette.mp4" type="video/mp4">
+              </video>
+              <div class="card-body">
+                <p class="card-year">Spring 2026 · Motion Graphics</p>
+                <p class="card-title-sm">Paris Baguette — Animated Logos</p>
+                <p class="card-desc">Three animated logo concepts using brand-aligned imagery — steaming coffee, falling beans, and café pastries — to communicate warmth and freshness.</p>
+                <div class="card-tags"><span class="tag">After Effects</span><span class="tag">Brand Design</span></div>
+              </div>
+              <button class="credits-toggle" onclick="toggleCredits(this)">
+                <span>Asset credits</span><span class="chev">›</span>
+              </button>
+              <div class="credits-panel">
+                <p class="credits-cat">Assets used</p>
+                <p>1. Coffee reference — <a href="https://share.google/CsjMO96jxajoHZdf6" target="_blank">Google Photos</a></p>
+                <p>2. Falling coffee beans — <a href="https://stock.adobe.com/images/falling-roasted-coffee-beans-isolated-on-transparent-background/777564079" target="_blank">Adobe Stock</a></p>
+                <p>3. Coffee with steam — <a href="https://stock.adobe.com/images/aromatic-cup-of-black-coffee-with-rising-steam-isolated-on-transparent-background-perfect-for-a-morning-pickmeup-or-a-relaxing-break/1729395268" target="_blank">Adobe Stock</a></p>
+                <p>4. White smoke — <a href="https://stock.adobe.com/images/white-smoke-transparent/563890924" target="_blank">Adobe Stock</a></p>
+                <p>5. White ceramic mug — <a href="https://stock.adobe.com/images/white-ceramic-mug-isolated-on-empty-background/527444697" target="_blank">Adobe Stock</a></p>
+                <p>6. Coffee bean — <a href="https://stock.adobe.com/images/coffee-bean-isolated-on-transparent-background-png/529259468" target="_blank">Adobe Stock</a></p>
+                <p>7. Cheese danish — <a href="https://stock.adobe.com/images/cheese-danish-pastry-top-view-isolated-on-transparent-background/868939824" target="_blank">Adobe Stock</a></p>
+                <p>8. Badge mockup — <a href="https://stock.adobe.com/templates/circle-round-pin-badge-mockup-template/1709363164" target="_blank">Adobe Stock</a></p>
+                <p>9. Chocolate cake — <a href="https://stock.adobe.com/images/chocolate-cake-with-chocolate-creame-isolated-on-white/536964018" target="_blank">Adobe Stock</a></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-left">
+          <h2>Let's work<br><em>together.</em></h2>
+          <p class="contact-sub">Open to UI/UX and web design opportunities. Let's talk.</p>
+        </div>
+        <div class="contact-right">
+          <div class="contact-links">
+            <a href="mailto:sanauansari@gmail.com" class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+              sanauansari@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/sanauansari/" target="_blank" rel="noopener" class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              linkedin.com/in/sanauansari
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Sana Ansari</p>
+  </footer>
+
+  <script>
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card, .featured-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    function toggleCredits(btn) {
+      const panel = btn.nextElementSibling;
+      const chev = btn.querySelector('.chev');
+      panel.classList.toggle('open');
+      chev.style.transform = panel.classList.contains('open') ? 'rotate(90deg)' : 'rotate(0)';
+    }
+  </script>
+
+</body>
+</html>
