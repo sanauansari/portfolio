@@ -125,6 +125,65 @@
     .hero-link:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
     .hero-link svg { width: 13px; height: 13px; }
 
+    /* SKILLS SECTION */
+    .skills-section {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 1.75rem;
+    }
+    .skill-cat-title {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-tag {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 3px 9px;
+      letter-spacing: 0.02em;
+    }
+    .skill-cert {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      margin-top: 0.6rem;
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .skill-cert::before {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232F543D' stroke-width='2'%3E%3Ccircle cx='12' cy='8' r='6'/%3E%3Cpath d='M8.21 13.89L7 23l5-3 5 3-1.21-9.12'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 980px) {
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .skills-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .skills-section { padding: 2.5rem 0; }
+    }
+
     /* WORK SECTION */
     .work-section { padding: 4rem 0 6rem; }
 
@@ -426,6 +485,56 @@
       .featured-title { font-size: 18px; }
     }
 
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .cert-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem 1.1rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .cert-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(47, 84, 61, 0.08);
+    }
+    .cert-issuer {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .cert-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.4;
+      flex: 1;
+    }
+    .cert-link {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      margin-top: 0.5rem;
+      transition: color 0.15s;
+    }
+    .cert-card:hover .cert-link { color: var(--accent); }
+
+    @media (max-width: 980px) {
+      .certs-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .certs-grid { grid-template-columns: 1fr; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .project-card, .featured-card { transition: none; }
     }
@@ -436,6 +545,7 @@
   <nav>
     <a href="#" class="nav-logo">Sana Ansari</a>
     <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -463,6 +573,120 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills-section" id="skills">
+    <div class="container">
+      <p class="section-label">Skills</p>
+      <div class="skills-grid">
+
+        <div>
+          <p class="skill-cat-title">UX & UI Design</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Wireframing</span>
+            <span class="skill-tag">Prototyping</span>
+            <span class="skill-tag">Interaction Design</span>
+            <span class="skill-tag">Usability Testing</span>
+            <span class="skill-tag">UX Research</span>
+            <span class="skill-tag">Information Architecture</span>
+            <span class="skill-tag">Accessibility (WCAG/ADA)</span>
+            <span class="skill-tag">Mobile UI Design</span>
+            <span class="skill-tag">VUI Design</span>
+            <span class="skill-tag">User Task Flow</span>
+            <span class="skill-tag">Personas</span>
+            <span class="skill-tag">Responsive Web Design</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="skill-cat-title">Design Tools</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">FigJam</span>
+            <span class="skill-tag">Adobe Photoshop</span>
+            <span class="skill-tag">Adobe Illustrator</span>
+            <span class="skill-tag">Adobe After Effects</span>
+            <span class="skill-tag">Adobe InDesign</span>
+            <span class="skill-tag">Adobe Bridge</span>
+            <span class="skill-tag">Canva</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="skill-cat-title">Web Development</p>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Bootstrap</span>
+            <span class="skill-tag">WordPress</span>
+            <span class="skill-tag">Elementor</span>
+            <span class="skill-tag">Wix</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Visual Studio Code</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="skill-cat-title">Marketing & Content</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Social Media Marketing</span>
+            <span class="skill-tag">Content Calendar Planning</span>
+            <span class="skill-tag">Email Marketing</span>
+            <span class="skill-tag">SEO</span>
+            <span class="skill-tag">Content Planning</span>
+            <span class="skill-tag">Content Development</span>
+            <span class="skill-tag">Mailchimp</span>
+            <span class="skill-tag">Hootsuite</span>
+            <span class="skill-tag">Google Suite</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="skill-cat-title">AI & Emerging Tools</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Anthropic Claude</span>
+            <span class="skill-tag">ChatGPT</span>
+            <span class="skill-tag">Figma Make</span>
+          </div>
+          <p class="skill-cert">Certified: AI Fluency Framework &amp; Foundations</p>
+        </div>
+
+      </div>
+
+      <div class="certs-row">
+        <p class="section-label" style="margin-bottom: 1.25rem; margin-top: 2.5rem;">Certifications</p>
+        <div class="certs-grid">
+          <a href="https://verify.skilljar.com/c/n5oktyyjz3j5" target="_blank" rel="noopener" class="cert-card">
+            <p class="cert-issuer">Anthropic · Jun 2026</p>
+            <p class="cert-name">AI Fluency Framework &amp; Foundations</p>
+            <span class="cert-link">View credential ↗</span>
+          </a>
+          <a href="https://verify.skilljar.com/c/bu9hj78acrw2" target="_blank" rel="noopener" class="cert-card">
+            <p class="cert-issuer">Anthropic · Jun 2026</p>
+            <p class="cert-name">Claude 101</p>
+            <span class="cert-link">View credential ↗</span>
+          </a>
+          <a href="https://learndigital.withgoogle.com/link/1qsdpcedm9s" target="_blank" rel="noopener" class="cert-card">
+            <p class="cert-issuer">Google Digital Garage · Jun 2021</p>
+            <p class="cert-name">Fundamentals of Digital Marketing</p>
+            <span class="cert-link">View credential ↗</span>
+          </a>
+          <a href="https://education.later.com/certificates/xovrawkpex" target="_blank" rel="noopener" class="cert-card">
+            <p class="cert-issuer">Later · Jun 2022</p>
+            <p class="cert-name">Later Product Pro Certification I &amp; II</p>
+            <span class="cert-link">View credential ↗</span>
+          </a>
+          <a href="https://codeinplace.stanford.edu/cip5/certificate/yssk7q" target="_blank" rel="noopener" class="cert-card">
+            <p class="cert-issuer">Stanford University · Jun 2025</p>
+            <p class="cert-name">Code in Place — Python Programming</p>
+            <span class="cert-link">View credential ↗</span>
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 
