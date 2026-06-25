@@ -125,6 +125,59 @@
     .hero-link:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
     .hero-link svg { width: 13px; height: 13px; }
 
+    /* TICKER */
+    .ticker-section {
+      border-bottom: 1px solid var(--border);
+      border-top: 1px solid var(--border);
+      padding: 1.1rem 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .ticker-section::before, .ticker-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 80px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .ticker-section::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
+    .ticker-section::after { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker 28s linear infinite;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 0 1.25rem;
+      white-space: nowrap;
+    }
+    .ticker-text {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: 0.04em;
+    }
+    .ticker-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-track { animation: none; }
+    }
+
     /* SKILLS SECTION */
     .skills-section {
       padding: 3.5rem 0;
@@ -575,6 +628,49 @@
       </div>
     </div>
   </section>
+
+  <!-- TICKER -->
+  <div class="ticker-section">
+    <div class="ticker-track">
+      <div class="ticker-item"><span class="ticker-text">Figma</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">UX Research</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Adobe After Effects</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Wireframing</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">HTML & CSS</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Interaction Design</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Prototyping</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Adobe Photoshop</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Accessibility (WCAG)</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">JavaScript</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Motion Graphics</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">FigJam</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Anthropic Claude</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Figma Make</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Information Architecture</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Adobe Illustrator</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Responsive Web Design</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">GitHub</span><span class="ticker-dot"></span></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="ticker-item"><span class="ticker-text">Figma</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">UX Research</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Adobe After Effects</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Wireframing</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">HTML & CSS</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Interaction Design</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Prototyping</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Adobe Photoshop</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Accessibility (WCAG)</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">JavaScript</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Motion Graphics</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">FigJam</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Anthropic Claude</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Figma Make</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Information Architecture</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Adobe Illustrator</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">Responsive Web Design</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span class="ticker-text">GitHub</span><span class="ticker-dot"></span></div>
+    </div>
+  </div>
 
   <!-- SKILLS -->
   <section class="skills-section" id="skills">
