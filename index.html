@@ -163,6 +163,15 @@
       color: var(--text-secondary);
       letter-spacing: 0.04em;
     }
+    .ticker-link {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .ticker-link:hover { color: var(--accent); }
     .ticker-dot {
       width: 4px;
       height: 4px;
@@ -598,8 +607,9 @@
   <nav>
     <a href="#" class="nav-logo">Sana Ansari</a>
     <ul class="nav-links">
-      <li><a href="#skills">Skills</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -632,45 +642,284 @@
   <!-- TICKER -->
   <div class="ticker-section">
     <div class="ticker-track">
-      <div class="ticker-item"><span class="ticker-text">Figma</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">UX Research</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Adobe After Effects</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Wireframing</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">HTML & CSS</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Interaction Design</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Prototyping</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Adobe Photoshop</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Accessibility (WCAG)</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">JavaScript</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Motion Graphics</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">FigJam</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Anthropic Claude</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Figma Make</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Information Architecture</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Adobe Illustrator</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Responsive Web Design</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">GitHub</span><span class="ticker-dot"></span></div>
-      <!-- Duplicate for seamless loop -->
-      <div class="ticker-item"><span class="ticker-text">Figma</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">UX Research</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Adobe After Effects</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Wireframing</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">HTML & CSS</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Interaction Design</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Prototyping</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Adobe Photoshop</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Accessibility (WCAG)</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">JavaScript</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Motion Graphics</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">FigJam</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Anthropic Claude</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Figma Make</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Information Architecture</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Adobe Illustrator</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">Responsive Web Design</span><span class="ticker-dot"></span></div>
-      <div class="ticker-item"><span class="ticker-text">GitHub</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><a href="#card-tennis" class="ticker-link">Ace Tennis Academy</a><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><a href="#card-food-waste" class="ticker-link">Reduce Food Waste App</a><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><a href="#card-place-at-table" class="ticker-link">A Place at the Table</a><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><a href="#card-old-clock" class="ticker-link">The Secret of the Old Clock</a><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><a href="#card-pixel-pioneers" class="ticker-link">Pixel Pioneers</a><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><a href="#card-hajj" class="ticker-link">Hajj Mubarak</a><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><a href="#card-paris" class="ticker-link">Paris Baguette</a><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><a href="#card-tennis" class="ticker-link">Ace Tennis Academy</a><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><a href="#card-food-waste" class="ticker-link">Reduce Food Waste App</a><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><a href="#card-place-at-table" class="ticker-link">A Place at the Table</a><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><a href="#card-old-clock" class="ticker-link">The Secret of the Old Clock</a><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><a href="#card-pixel-pioneers" class="ticker-link">Pixel Pioneers</a><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><a href="#card-hajj" class="ticker-link">Hajj Mubarak</a><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><a href="#card-paris" class="ticker-link">Paris Baguette</a><span class="ticker-dot"></span></div>
     </div>
   </div>
+
+  <!-- WORK -->
+  <section class="work-section" id="work">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Selected work</p>
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="ux">UX Design</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+          <button class="filter-btn" data-filter="motion">Motion</button>
+        </div>
+      </div>
+
+      <div class="projects-wrap">
+
+        <!-- ROW 1: 3 small cards -->
+        <div class="row-3">
+
+          <!-- Ace Tennis -->
+          <div class="project-card" data-category="web" id="card-tennis">
+            <img class="card-img-sm" src="images/tennis.jpg" loading="lazy" alt="Ace Tennis Academy website on laptop mockup"
+              onclick="window.open('projects/ace-tennis.html', '_blank')"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="card-placeholder card-img-sm" style="display:none; background:#0a2240; cursor:pointer;" onclick="window.open('projects/ace-tennis.html', '_blank')">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20"/></svg>
+            </div>
+            <div class="card-body">
+              <p class="card-year">Fall 2024 · Web</p>
+              <p class="card-title-sm">Ace Tennis Academy</p>
+              <p class="card-desc">Responsive multi-page website for a fictional tennis academy. Built as a team of three with full booking and checkout flow.</p>
+              <div class="card-tags"><span class="tag">HTML/CSS</span><span class="tag">Team Project</span></div>
+              <div class="card-footer">
+                <a href="https://sanauansari.github.io/ace-tennis-academy/" target="_blank" rel="noopener" class="card-link">
+                  View site
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <button class="credits-toggle" onclick="toggleCredits(this)">
+              <span>Asset credits</span><span class="chev">›</span>
+            </button>
+            <div class="credits-panel">
+              <p class="credits-cat">Images</p>
+              <p>Images sourced from <a href="https://stock.adobe.com" target="_blank">Adobe Stock</a>. Full credits to be added.</p>
+              <p class="credits-cat">Mockup</p>
+              <p>Laptop mockup — <a href="https://www.behance.net/gallery/180625045/Free-Laptop-Mockup?tracking_source=search_projects|free+website+mockup&l=1" target="_blank">Behance</a></p>
+            </div>
+          </div>
+
+          <!-- A Place at the Table -->
+          <div class="project-card" data-category="graphic" id="card-place-at-table">
+            <div class="card-img-duo" onclick="window.open('projects/place-at-table.html', '_blank')">
+              <img src="images/place-at-table.jpg" loading="lazy" alt="A Place at the Table front cover" onerror="this.style.background='#EEF1EC';">
+              <img src="images/place-at-table.jpg" loading="lazy" alt="A Place at the Table back cover" style="object-position:right;" onerror="this.style.background='#E0EBE2';">
+            </div>
+            <div class="card-body">
+              <p class="card-year">Fall 2025 · Graphic Design</p>
+              <p class="card-title-sm">A Place at the Table</p>
+              <p class="card-desc">Full book jacket redesign for the novel by Faruqi &amp; Shovan. Spice platter pattern and cooking utensil motifs.</p>
+              <div class="card-tags"><span class="tag">Print</span><span class="tag">Typography</span></div>
+            </div>
+            <button class="credits-toggle" onclick="toggleCredits(this)">
+              <span>Asset credits</span><span class="chev">›</span>
+            </button>
+            <div class="credits-panel">
+              <p class="credits-cat">Cover assets</p>
+              <p>1. HMH logo — <a href="https://commons.wikimedia.org/wiki/File:Houghton_Mifflin_Harcourt_(HMH)_logo_2024.svg" target="_blank">Wikimedia Commons</a></p>
+              <p>2. Mosque — Rawpixel.com, <a href="https://stock.adobe.com/images/png-flat-illustration-of-ramadan-mosque-architecture-silhouette/1224325643" target="_blank">Adobe Stock</a></p>
+              <p>3. Bubble tea — Kseniia Kosikova, <a href="https://stock.adobe.com/images/cartoon-bubble-tea-or-pearl-milk-tea-isolated-on-white/562417519" target="_blank">Adobe Stock</a></p>
+              <p>4. Naan — FOOD, <a href="https://stock.adobe.com/images/a-detailed-illustration-of-a-single-piece-of-freshly-baked-naan-flatbread-on-a-white-background/1722699346" target="_blank">Adobe Stock</a></p>
+              <p>5. Masala chai — Touaha, <a href="https://stock.adobe.com/images/steaming-hot-masala-chai-in-glass-traditional-indian-beverage-drink-photography-on-transparent-background/1606369392" target="_blank">Adobe Stock</a></p>
+              <p>6. Menorah — Bohdan, <a href="https://stock.adobe.com/images/golden-menorah-with-blue-candles-and-flames-for-jewish-hanukkah-holiday-celebration/1735991042" target="_blank">Adobe Stock</a></p>
+              <p>7. Indian food watercolor — Thi Le, <a href="https://stock.adobe.com/images/indian-food-watercolor-style-png-background/615389721" target="_blank">Adobe Stock</a></p>
+              <p>8. Cardamom — shornagraphiclab, <a href="https://stock.adobe.com/images/close-up-watercolor-illustration-of-green-cardamom-pods-and-seeds-isolated-on-transparent-background/1687317321" target="_blank">Adobe Stock</a></p>
+              <p>9. Kitchen utensils — barks, <a href="https://stock.adobe.com/images/hanging-kitchen-utensil-vector-illustration/555025472" target="_blank">Adobe Stock</a></p>
+              <p>10. Chicken biryani — Rawpixel.com, <a href="https://stock.adobe.com/images/png-traditional-spicy-chicken-biryani/1296893155" target="_blank">Adobe Stock</a></p>
+              <p>11. Bunting — Sunil, <a href="https://stock.adobe.com/images/fourth-of-july-bunting-usa-independence-day-vector-illustration/1522533304" target="_blank">Adobe Stock</a></p>
+              <p class="credits-cat">Author photos</p>
+              <p>12. Saadia Faruqi — <a href="https://saadiafaruqi.com/about/" target="_blank">saadiafaruqi.com</a></p>
+              <p>13. Laura Shovan — <a href="https://www.highlightsfoundation.org/faculty/laura-shovan/" target="_blank">Highlights Foundation</a></p>
+            </div>
+          </div>
+
+          <!-- Secret of the Old Clock -->
+          <div class="project-card" data-category="graphic" id="card-old-clock"> loading="lazy" alt="The Secret of the Old Clock book cover redesign"
+              onclick="window.open('projects/old-clock.html', '_blank')"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="card-placeholder card-img-sm" style="display:none; cursor:pointer;" onclick="window.open('projects/old-clock.html', '_blank')">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            </div>
+            <div class="card-body">
+              <p class="card-year">Fall 2025 · Graphic Design</p>
+              <p class="card-title-sm">The Secret of the Old Clock</p>
+              <p class="card-desc">Nancy Drew book jacket redesign — front, back, and spine. Teal and gold palette with vintage mystery motifs.</p>
+              <div class="card-tags"><span class="tag">Print</span><span class="tag">Typography</span></div>
+            </div>
+            <button class="credits-toggle" onclick="toggleCredits(this)">
+              <span>Asset credits</span><span class="chev">›</span>
+            </button>
+            <div class="credits-panel">
+              <p class="credits-cat">Cover assets</p>
+              <p>1. Flashlight banner — Роман Ярощук, <a href="https://stock.adobe.com/images/flashlight-banner-with-flashlight-and-ray-of-light-vector-illustration/448797744" target="_blank">Adobe Stock</a></p>
+              <p>2. Flashlight — dacianlogan, <a href="https://stock.adobe.com/images/flashlight-illustration/88221350" target="_blank">Adobe Stock</a></p>
+              <p>3. Clock charm — Hans Malm, <a href="https://stock.adobe.com/images/early-twentieth-century-timepiece-charm/1743973320" target="_blank">Adobe Stock</a></p>
+              <p>4. Dirt road — YIfan, <a href="https://stock.adobe.com/images/a-dirt-road-with-a-black-fence-on-each-side-surrounded-by-green-grass-and-wildflowers-in-the-springtime/1342665498" target="_blank">Adobe Stock</a></p>
+              <p>5. Courtroom — Nongkhane, <a href="https://stock.adobe.com/images/bankruptcy-hearing-process-courtroom-legal-documents-serious-environment-closeup-view-justice-and-accountability/1373781040" target="_blank">Adobe Stock</a></p>
+              <p>6. Blue car — NIRJANA, <a href="https://stock.adobe.com/images/blue-car-rear-view-isolated-on-white-background-n-modern-vehicle-backside-for-auto-design-transport-concepts-and-marketing-use/1509213724" target="_blank">Adobe Stock</a></p>
+              <p>7. Magnifying glass — BillionPhotos.com, <a href="https://stock.adobe.com/images/magnifying-glass-isolated-on-a-white-background/536979520" target="_blank">Adobe Stock</a></p>
+              <p class="credits-cat">Mockup</p>
+              <p>Book mockup — Avelina Studio, <a href="https://avelinastudio.com/product/free-book-mockup-front-back-spine/" target="_blank">avelinastudio.com</a></p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ROW 2: Featured Food Waste -->
+        <div class="featured-card" data-category="ux" id="card-food-waste">
+          <img class="featured-img" src="images/food-waste-mobile-2.jpg" loading="lazy" alt="Reduce Food Waste mobile app"
+            style="object-fit: contain; background: #f0f9f4; padding: 1rem;"
+            onclick="window.open('projects/food-waste.html', '_blank')"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="card-placeholder" style="display:none; min-height:220px; background:#EEF1EC;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1"><rect x="5" y="2" width="14" height="20" rx="2"/></svg>
+          </div>
+          <div class="featured-body">
+            <div>
+              <p class="featured-label">UX Design · 2025–2026</p>
+              <p class="featured-title">Reduce Food Waste App</p>
+              <p class="featured-desc">A two-phase UX project. Phase 1 (GDS 070) covered the full mobile experience — virtual fridge, pantry tracking, recipe suggestions, and QR scanning. Phase 2 (GDS 077) extended the design to Apple Watch, with expiry alerts, cooking timers, and chef coaching sessions.</p>
+              <div class="card-tags">
+                <span class="tag">UX Design</span>
+                <span class="tag">Mobile</span>
+                <span class="tag">Smartwatch</span>
+                <span class="tag">Figma</span>
+              </div>
+            </div>
+          </div>
+          <button class="credits-toggle" onclick="toggleCredits(this)" style="border-top: 1px solid var(--border);">
+            <span>Project details</span><span class="chev">›</span>
+          </button>
+          <div class="credits-panel">
+            <p class="credits-cat">Problem</p>
+            <p>Food is often forgotten in pantries and fridges and thrown away before it's used — people forget what they have, aren't sure if it's still safe to eat, or don't know how to use up leftovers and odd ingredients.</p>
+            <p class="credits-cat">Solution</p>
+            <p>Tracks and helps use food before it expires — suggests recipes from available ingredients, sends expiration reminders, and shows a freshness guide for items in a virtual pantry and fridge. Phase 1 covered the mobile app; Phase 2 extended it to a smartwatch companion with quick-access reminders, recipe suggestions, and voice commands.</p>
+            <p class="credits-cat">Target users</p>
+            <p>College students and young professionals, environmentally conscious consumers, parents involving kids in food prep, and roommates sharing groceries.</p>
+            <p class="credits-cat">Key features</p>
+            <p>Voice command integration, user-defined push notifications, quick-glance fridge/pantry view, expiration reminders, shopping list sync, and voice-assisted cooking mode.</p>
+          </div>
+          <button class="credits-toggle" onclick="toggleCredits(this)" style="border-top: 1px solid var(--border);">
+            <span>Asset credits</span><span class="chev">›</span>
+          </button>
+          <div class="credits-panel">
+            <p class="credits-cat">Images</p>
+            <p>Images sourced from <a href="https://stock.adobe.com" target="_blank">Adobe Stock</a> and <a href="https://unsplash.com" target="_blank">Unsplash</a>. Full credits to be added.</p>
+          </div>
+        </div>
+
+        <!-- ROW 3: Pixel Pioneers + Motion stack -->
+        <div class="row-featured">
+
+          <!-- Pixel Pioneers -->
+          <div class="project-card" data-category="ux" id="card-pixel-pioneers">
+            <img class="card-img-tall"
+              src="images/pixel-pioneers.png" loading="lazy"
+              alt="Pixel Pioneers app screens"
+              onclick="window.open('projects/pixel-pioneers.html', '_blank')"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="card-placeholder card-img-tall" style="display:none;">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1"><rect x="5" y="2" width="14" height="20" rx="2"/></svg>
+            </div>
+            <div class="card-body">
+              <p class="card-year">Spring 2026 · UX Design</p>
+              <p class="card-title">Pixel Pioneers — Coding Adventure</p>
+              <p class="card-desc">Game-based learning app for 3rd graders. Block-based puzzles, mini game-building, and unlockable rewards. Meets California CS Standard 3-5.CS.2.</p>
+              <div class="card-tags"><span class="tag">Education</span><span class="tag">Mobile</span><span class="tag">Figma</span></div>
+              <div class="card-footer">
+                <a href="https://sites.google.com/view/sana-ansari-gds72-spring2026/home" target="_blank" rel="noopener" class="card-link">
+                  View case study
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <button class="credits-toggle" onclick="toggleCredits(this)">
+              <span>Project details</span><span class="chev">›</span>
+            </button>
+            <div class="credits-panel">
+              <p class="credits-cat">Background</p>
+              <p>Supports California Computer Science Standard 3-5.CS.2, teaching students how hardware and software work together through interactive coding activities and simple game-building lessons.</p>
+              <p class="credits-cat">Objective</p>
+              <p>Introduces third-grade students to beginner coding concepts through fun, interactive, game-based learning experiences.</p>
+              <p class="credits-cat">Target audience</p>
+              <p>3rd grade students, ages 7–8, beginner coding learners.</p>
+              <p class="credits-cat">Key features</p>
+              <p>Block-based coding lessons, interactive puzzles and challenges, mini game-building activities, unlockable rewards and badges, kid-friendly visuals and animations, and a guide character with hints and support.</p>
+              <p class="credits-cat">User task flow</p>
+              <p>Third grade students need a fun, hands-on, interactive way to explore basic coding concepts so they can develop problem-solving skills and create their own games.</p>
+            </div>
+            <button class="credits-toggle" onclick="toggleCredits(this)">
+              <span>Asset credits</span><span class="chev">›</span>
+            </button>
+            <div class="credits-panel">
+              <p class="credits-cat">Images</p>
+              <p>Images sourced from <a href="https://stock.adobe.com" target="_blank">Adobe Stock</a> and <a href="https://unsplash.com" target="_blank">Unsplash</a>. Full credits to be added.</p>
+            </div>
+          </div>
+
+          <!-- Motion stack -->
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+
+            <!-- Hajj Mubarak -->
+            <div class="project-card" data-category="motion" id="card-hajj">
+                onclick="window.open('projects/hajj-mubarak.html', '_blank')">
+                <source src="images/hajj-mubarak.mp4" type="video/mp4">
+              </video>
+              <div class="card-placeholder card-img" style="display:none;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1"><circle cx="12" cy="5" r="3"/><path d="M12 8v8M8 20h8"/></svg>
+              </div>
+              <div class="card-body">
+                <p class="card-year">Spring 2026 · Motion Graphics</p>
+                <p class="card-title-sm">Hajj Mubarak — Animated Greeting Card</p>
+                <p class="card-desc">Original animated card in After Effects — no photos or found graphics. Animated mosque silhouettes, crescent moon, and typography from scratch.</p>
+                <div class="card-tags"><span class="tag">After Effects</span><span class="tag">Illustration</span></div>
+              </div>
+            </div>
+
+            <!-- Paris Baguette -->
+            <div class="project-card" data-category="motion" id="card-paris">>
+                <source src="images/paris-baguette.mp4" type="video/mp4">
+              </video>
+              <div class="card-body">
+                <p class="card-year">Spring 2026 · Motion Graphics</p>
+                <p class="card-title-sm">Paris Baguette — Animated Logos</p>
+                <p class="card-desc">Three animated logo concepts using brand-aligned imagery — steaming coffee, falling beans, and café pastries — to communicate warmth and freshness.</p>
+                <div class="card-tags"><span class="tag">After Effects</span><span class="tag">Brand Design</span></div>
+              </div>
+              <button class="credits-toggle" onclick="toggleCredits(this)">
+                <span>Asset credits</span><span class="chev">›</span>
+              </button>
+              <div class="credits-panel">
+                <p class="credits-cat">Assets used</p>
+                <p>1. Coffee reference — <a href="https://share.google/CsjMO96jxajoHZdf6" target="_blank">Google Photos</a></p>
+                <p>2. Falling coffee beans — <a href="https://stock.adobe.com/images/falling-roasted-coffee-beans-isolated-on-transparent-background/777564079" target="_blank">Adobe Stock</a></p>
+                <p>3. Coffee with steam — <a href="https://stock.adobe.com/images/aromatic-cup-of-black-coffee-with-rising-steam-isolated-on-transparent-background-perfect-for-a-morning-pickmeup-or-a-relaxing-break/1729395268" target="_blank">Adobe Stock</a></p>
+                <p>4. White smoke — <a href="https://stock.adobe.com/images/white-smoke-transparent/563890924" target="_blank">Adobe Stock</a></p>
+                <p>5. White ceramic mug — <a href="https://stock.adobe.com/images/white-ceramic-mug-isolated-on-empty-background/527444697" target="_blank">Adobe Stock</a></p>
+                <p>6. Coffee bean — <a href="https://stock.adobe.com/images/coffee-bean-isolated-on-transparent-background-png/529259468" target="_blank">Adobe Stock</a></p>
+                <p>7. Cheese danish — <a href="https://stock.adobe.com/images/cheese-danish-pastry-top-view-isolated-on-transparent-background/868939824" target="_blank">Adobe Stock</a></p>
+                <p>8. Badge mockup — <a href="https://stock.adobe.com/templates/circle-round-pin-badge-mockup-template/1709363164" target="_blank">Adobe Stock</a></p>
+                <p>9. Chocolate cake — <a href="https://stock.adobe.com/images/chocolate-cake-with-chocolate-creame-isolated-on-white/536964018" target="_blank">Adobe Stock</a></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- SKILLS -->
   <section class="skills-section" id="skills">
@@ -751,302 +1000,39 @@
         </div>
 
       </div>
-
-      <div class="certs-row">
-        <p class="section-label" style="margin-bottom: 1.25rem; margin-top: 2.5rem;">Certifications</p>
-        <div class="certs-grid">
-          <a href="https://verify.skilljar.com/c/n5oktyyjz3j5" target="_blank" rel="noopener" class="cert-card">
-            <p class="cert-issuer">Anthropic · Jun 2026</p>
-            <p class="cert-name">AI Fluency Framework &amp; Foundations</p>
-            <span class="cert-link">View credential ↗</span>
-          </a>
-          <a href="https://verify.skilljar.com/c/bu9hj78acrw2" target="_blank" rel="noopener" class="cert-card">
-            <p class="cert-issuer">Anthropic · Jun 2026</p>
-            <p class="cert-name">Claude 101</p>
-            <span class="cert-link">View credential ↗</span>
-          </a>
-          <a href="https://learndigital.withgoogle.com/link/1qsdpcedm9s" target="_blank" rel="noopener" class="cert-card">
-            <p class="cert-issuer">Google Digital Garage · Jun 2021</p>
-            <p class="cert-name">Fundamentals of Digital Marketing</p>
-            <span class="cert-link">View credential ↗</span>
-          </a>
-          <a href="https://education.later.com/certificates/xovrawkpex" target="_blank" rel="noopener" class="cert-card">
-            <p class="cert-issuer">Later · Jun 2022</p>
-            <p class="cert-name">Later Product Pro Certification I &amp; II</p>
-            <span class="cert-link">View credential ↗</span>
-          </a>
-          <a href="https://codeinplace.stanford.edu/cip5/certificate/yssk7q" target="_blank" rel="noopener" class="cert-card">
-            <p class="cert-issuer">Stanford University · Jun 2025</p>
-            <p class="cert-name">Code in Place — Python Programming</p>
-            <span class="cert-link">View credential ↗</span>
-          </a>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- WORK -->
-  <section class="work-section" id="work">
+  <!-- CERTIFICATIONS -->
+  <section class="skills-section" id="certifications" style="border-top: none; padding-top: 0;">
     <div class="container">
-      <div class="section-header">
-        <p class="section-label">Selected work</p>
-        <div class="filter-tabs">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="ux">UX Design</button>
-          <button class="filter-btn" data-filter="web">Web</button>
-          <button class="filter-btn" data-filter="graphic">Graphic Design</button>
-          <button class="filter-btn" data-filter="motion">Motion</button>
-        </div>
-      </div>
-
-      <div class="projects-wrap">
-
-        <!-- ROW 1: 3 small cards -->
-        <div class="row-3">
-
-          <!-- Ace Tennis -->
-          <div class="project-card" data-category="web">
-            <img class="card-img-sm" src="images/tennis.jpg" loading="lazy" alt="Ace Tennis Academy website on laptop mockup"
-              onclick="window.open('projects/ace-tennis.html', '_blank')"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="card-placeholder card-img-sm" style="display:none; background:#0a2240; cursor:pointer;" onclick="window.open('projects/ace-tennis.html', '_blank')">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20"/></svg>
-            </div>
-            <div class="card-body">
-              <p class="card-year">Fall 2024 · Web</p>
-              <p class="card-title-sm">Ace Tennis Academy</p>
-              <p class="card-desc">Responsive multi-page website for a fictional tennis academy. Built as a team of three with full booking and checkout flow.</p>
-              <div class="card-tags"><span class="tag">HTML/CSS</span><span class="tag">Team Project</span></div>
-              <div class="card-footer">
-                <a href="https://sanauansari.github.io/ace-tennis-academy/" target="_blank" rel="noopener" class="card-link">
-                  View site
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-              </div>
-            </div>
-            <button class="credits-toggle" onclick="toggleCredits(this)">
-              <span>Asset credits</span><span class="chev">›</span>
-            </button>
-            <div class="credits-panel">
-              <p class="credits-cat">Images</p>
-              <p>Images sourced from <a href="https://stock.adobe.com" target="_blank">Adobe Stock</a>. Full credits to be added.</p>
-              <p class="credits-cat">Mockup</p>
-              <p>Laptop mockup — <a href="https://www.behance.net/gallery/180625045/Free-Laptop-Mockup?tracking_source=search_projects|free+website+mockup&l=1" target="_blank">Behance</a></p>
-            </div>
-          </div>
-
-          <!-- A Place at the Table -->
-          <div class="project-card" data-category="graphic">
-            <div class="card-img-duo" onclick="window.open('projects/place-at-table.html', '_blank')">
-              <img src="images/place-at-table.jpg" loading="lazy" alt="A Place at the Table front cover" onerror="this.style.background='#EEF1EC';">
-              <img src="images/place-at-table.jpg" loading="lazy" alt="A Place at the Table back cover" style="object-position:right;" onerror="this.style.background='#E0EBE2';">
-            </div>
-            <div class="card-body">
-              <p class="card-year">Fall 2025 · Graphic Design</p>
-              <p class="card-title-sm">A Place at the Table</p>
-              <p class="card-desc">Full book jacket redesign for the novel by Faruqi &amp; Shovan. Spice platter pattern and cooking utensil motifs.</p>
-              <div class="card-tags"><span class="tag">Print</span><span class="tag">Typography</span></div>
-            </div>
-            <button class="credits-toggle" onclick="toggleCredits(this)">
-              <span>Asset credits</span><span class="chev">›</span>
-            </button>
-            <div class="credits-panel">
-              <p class="credits-cat">Cover assets</p>
-              <p>1. HMH logo — <a href="https://commons.wikimedia.org/wiki/File:Houghton_Mifflin_Harcourt_(HMH)_logo_2024.svg" target="_blank">Wikimedia Commons</a></p>
-              <p>2. Mosque — Rawpixel.com, <a href="https://stock.adobe.com/images/png-flat-illustration-of-ramadan-mosque-architecture-silhouette/1224325643" target="_blank">Adobe Stock</a></p>
-              <p>3. Bubble tea — Kseniia Kosikova, <a href="https://stock.adobe.com/images/cartoon-bubble-tea-or-pearl-milk-tea-isolated-on-white/562417519" target="_blank">Adobe Stock</a></p>
-              <p>4. Naan — FOOD, <a href="https://stock.adobe.com/images/a-detailed-illustration-of-a-single-piece-of-freshly-baked-naan-flatbread-on-a-white-background/1722699346" target="_blank">Adobe Stock</a></p>
-              <p>5. Masala chai — Touaha, <a href="https://stock.adobe.com/images/steaming-hot-masala-chai-in-glass-traditional-indian-beverage-drink-photography-on-transparent-background/1606369392" target="_blank">Adobe Stock</a></p>
-              <p>6. Menorah — Bohdan, <a href="https://stock.adobe.com/images/golden-menorah-with-blue-candles-and-flames-for-jewish-hanukkah-holiday-celebration/1735991042" target="_blank">Adobe Stock</a></p>
-              <p>7. Indian food watercolor — Thi Le, <a href="https://stock.adobe.com/images/indian-food-watercolor-style-png-background/615389721" target="_blank">Adobe Stock</a></p>
-              <p>8. Cardamom — shornagraphiclab, <a href="https://stock.adobe.com/images/close-up-watercolor-illustration-of-green-cardamom-pods-and-seeds-isolated-on-transparent-background/1687317321" target="_blank">Adobe Stock</a></p>
-              <p>9. Kitchen utensils — barks, <a href="https://stock.adobe.com/images/hanging-kitchen-utensil-vector-illustration/555025472" target="_blank">Adobe Stock</a></p>
-              <p>10. Chicken biryani — Rawpixel.com, <a href="https://stock.adobe.com/images/png-traditional-spicy-chicken-biryani/1296893155" target="_blank">Adobe Stock</a></p>
-              <p>11. Bunting — Sunil, <a href="https://stock.adobe.com/images/fourth-of-july-bunting-usa-independence-day-vector-illustration/1522533304" target="_blank">Adobe Stock</a></p>
-              <p class="credits-cat">Author photos</p>
-              <p>12. Saadia Faruqi — <a href="https://saadiafaruqi.com/about/" target="_blank">saadiafaruqi.com</a></p>
-              <p>13. Laura Shovan — <a href="https://www.highlightsfoundation.org/faculty/laura-shovan/" target="_blank">Highlights Foundation</a></p>
-            </div>
-          </div>
-
-          <!-- Secret of the Old Clock -->
-          <div class="project-card" data-category="graphic">
-            <img class="card-img-sm" src="images/old-clock.jpg" loading="lazy" alt="The Secret of the Old Clock book cover redesign"
-              onclick="window.open('projects/old-clock.html', '_blank')"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="card-placeholder card-img-sm" style="display:none; cursor:pointer;" onclick="window.open('projects/old-clock.html', '_blank')">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            </div>
-            <div class="card-body">
-              <p class="card-year">Fall 2025 · Graphic Design</p>
-              <p class="card-title-sm">The Secret of the Old Clock</p>
-              <p class="card-desc">Nancy Drew book jacket redesign — front, back, and spine. Teal and gold palette with vintage mystery motifs.</p>
-              <div class="card-tags"><span class="tag">Print</span><span class="tag">Typography</span></div>
-            </div>
-            <button class="credits-toggle" onclick="toggleCredits(this)">
-              <span>Asset credits</span><span class="chev">›</span>
-            </button>
-            <div class="credits-panel">
-              <p class="credits-cat">Cover assets</p>
-              <p>1. Flashlight banner — Роман Ярощук, <a href="https://stock.adobe.com/images/flashlight-banner-with-flashlight-and-ray-of-light-vector-illustration/448797744" target="_blank">Adobe Stock</a></p>
-              <p>2. Flashlight — dacianlogan, <a href="https://stock.adobe.com/images/flashlight-illustration/88221350" target="_blank">Adobe Stock</a></p>
-              <p>3. Clock charm — Hans Malm, <a href="https://stock.adobe.com/images/early-twentieth-century-timepiece-charm/1743973320" target="_blank">Adobe Stock</a></p>
-              <p>4. Dirt road — YIfan, <a href="https://stock.adobe.com/images/a-dirt-road-with-a-black-fence-on-each-side-surrounded-by-green-grass-and-wildflowers-in-the-springtime/1342665498" target="_blank">Adobe Stock</a></p>
-              <p>5. Courtroom — Nongkhane, <a href="https://stock.adobe.com/images/bankruptcy-hearing-process-courtroom-legal-documents-serious-environment-closeup-view-justice-and-accountability/1373781040" target="_blank">Adobe Stock</a></p>
-              <p>6. Blue car — NIRJANA, <a href="https://stock.adobe.com/images/blue-car-rear-view-isolated-on-white-background-n-modern-vehicle-backside-for-auto-design-transport-concepts-and-marketing-use/1509213724" target="_blank">Adobe Stock</a></p>
-              <p>7. Magnifying glass — BillionPhotos.com, <a href="https://stock.adobe.com/images/magnifying-glass-isolated-on-a-white-background/536979520" target="_blank">Adobe Stock</a></p>
-              <p class="credits-cat">Mockup</p>
-              <p>Book mockup — Avelina Studio, <a href="https://avelinastudio.com/product/free-book-mockup-front-back-spine/" target="_blank">avelinastudio.com</a></p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- ROW 2: Featured Food Waste -->
-        <div class="featured-card" data-category="ux">
-          <img class="featured-img" src="images/food-waste-mobile-2.jpg" loading="lazy" alt="Reduce Food Waste mobile app"
-            style="object-fit: contain; background: #f0f9f4; padding: 1rem;"
-            onclick="window.open('projects/food-waste.html', '_blank')"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="card-placeholder" style="display:none; min-height:220px; background:#EEF1EC;">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1"><rect x="5" y="2" width="14" height="20" rx="2"/></svg>
-          </div>
-          <div class="featured-body">
-            <div>
-              <p class="featured-label">UX Design · 2025–2026</p>
-              <p class="featured-title">Reduce Food Waste App</p>
-              <p class="featured-desc">A two-phase UX project. Phase 1 (GDS 070) covered the full mobile experience — virtual fridge, pantry tracking, recipe suggestions, and QR scanning. Phase 2 (GDS 077) extended the design to Apple Watch, with expiry alerts, cooking timers, and chef coaching sessions.</p>
-              <div class="card-tags">
-                <span class="tag">UX Design</span>
-                <span class="tag">Mobile</span>
-                <span class="tag">Smartwatch</span>
-                <span class="tag">Figma</span>
-              </div>
-            </div>
-          </div>
-          <button class="credits-toggle" onclick="toggleCredits(this)" style="border-top: 1px solid var(--border);">
-            <span>Project details</span><span class="chev">›</span>
-          </button>
-          <div class="credits-panel">
-            <p class="credits-cat">Problem</p>
-            <p>Food is often forgotten in pantries and fridges and thrown away before it's used — people forget what they have, aren't sure if it's still safe to eat, or don't know how to use up leftovers and odd ingredients.</p>
-            <p class="credits-cat">Solution</p>
-            <p>Tracks and helps use food before it expires — suggests recipes from available ingredients, sends expiration reminders, and shows a freshness guide for items in a virtual pantry and fridge. Phase 1 covered the mobile app; Phase 2 extended it to a smartwatch companion with quick-access reminders, recipe suggestions, and voice commands.</p>
-            <p class="credits-cat">Target users</p>
-            <p>College students and young professionals, environmentally conscious consumers, parents involving kids in food prep, and roommates sharing groceries.</p>
-            <p class="credits-cat">Key features</p>
-            <p>Voice command integration, user-defined push notifications, quick-glance fridge/pantry view, expiration reminders, shopping list sync, and voice-assisted cooking mode.</p>
-          </div>
-          <button class="credits-toggle" onclick="toggleCredits(this)" style="border-top: 1px solid var(--border);">
-            <span>Asset credits</span><span class="chev">›</span>
-          </button>
-          <div class="credits-panel">
-            <p class="credits-cat">Images</p>
-            <p>Images sourced from <a href="https://stock.adobe.com" target="_blank">Adobe Stock</a> and <a href="https://unsplash.com" target="_blank">Unsplash</a>. Full credits to be added.</p>
-          </div>
-        </div>
-
-        <!-- ROW 3: Pixel Pioneers + Motion stack -->
-        <div class="row-featured">
-
-          <!-- Pixel Pioneers -->
-          <div class="project-card" data-category="ux">
-            <img class="card-img-tall"
-              src="images/pixel-pioneers.png" loading="lazy"
-              alt="Pixel Pioneers app screens"
-              onclick="window.open('projects/pixel-pioneers.html', '_blank')"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="card-placeholder card-img-tall" style="display:none;">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1"><rect x="5" y="2" width="14" height="20" rx="2"/></svg>
-            </div>
-            <div class="card-body">
-              <p class="card-year">Spring 2026 · UX Design</p>
-              <p class="card-title">Pixel Pioneers — Coding Adventure</p>
-              <p class="card-desc">Game-based learning app for 3rd graders. Block-based puzzles, mini game-building, and unlockable rewards. Meets California CS Standard 3-5.CS.2.</p>
-              <div class="card-tags"><span class="tag">Education</span><span class="tag">Mobile</span><span class="tag">Figma</span></div>
-              <div class="card-footer">
-                <a href="https://sites.google.com/view/sana-ansari-gds72-spring2026/home" target="_blank" rel="noopener" class="card-link">
-                  View case study
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-              </div>
-            </div>
-            <button class="credits-toggle" onclick="toggleCredits(this)">
-              <span>Project details</span><span class="chev">›</span>
-            </button>
-            <div class="credits-panel">
-              <p class="credits-cat">Background</p>
-              <p>Supports California Computer Science Standard 3-5.CS.2, teaching students how hardware and software work together through interactive coding activities and simple game-building lessons.</p>
-              <p class="credits-cat">Objective</p>
-              <p>Introduces third-grade students to beginner coding concepts through fun, interactive, game-based learning experiences.</p>
-              <p class="credits-cat">Target audience</p>
-              <p>3rd grade students, ages 7–8, beginner coding learners.</p>
-              <p class="credits-cat">Key features</p>
-              <p>Block-based coding lessons, interactive puzzles and challenges, mini game-building activities, unlockable rewards and badges, kid-friendly visuals and animations, and a guide character with hints and support.</p>
-              <p class="credits-cat">User task flow</p>
-              <p>Third grade students need a fun, hands-on, interactive way to explore basic coding concepts so they can develop problem-solving skills and create their own games.</p>
-            </div>
-            <button class="credits-toggle" onclick="toggleCredits(this)">
-              <span>Asset credits</span><span class="chev">›</span>
-            </button>
-            <div class="credits-panel">
-              <p class="credits-cat">Images</p>
-              <p>Images sourced from <a href="https://stock.adobe.com" target="_blank">Adobe Stock</a> and <a href="https://unsplash.com" target="_blank">Unsplash</a>. Full credits to be added.</p>
-            </div>
-          </div>
-
-          <!-- Motion stack -->
-          <div style="display:flex; flex-direction:column; gap:1.5rem;">
-
-            <!-- Hajj Mubarak -->
-            <div class="project-card" data-category="motion">
-              <video class="card-img" autoplay loop muted playsinline
-                onclick="window.open('projects/hajj-mubarak.html', '_blank')">
-                <source src="images/hajj-mubarak.mp4" type="video/mp4">
-              </video>
-              <div class="card-placeholder card-img" style="display:none;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4A7C59" stroke-width="1"><circle cx="12" cy="5" r="3"/><path d="M12 8v8M8 20h8"/></svg>
-              </div>
-              <div class="card-body">
-                <p class="card-year">Spring 2026 · Motion Graphics</p>
-                <p class="card-title-sm">Hajj Mubarak — Animated Greeting Card</p>
-                <p class="card-desc">Original animated card in After Effects — no photos or found graphics. Animated mosque silhouettes, crescent moon, and typography from scratch.</p>
-                <div class="card-tags"><span class="tag">After Effects</span><span class="tag">Illustration</span></div>
-              </div>
-            </div>
-
-            <!-- Paris Baguette -->
-            <div class="project-card" data-category="motion">
-              <video class="card-video" autoplay loop muted playsinline onclick="window.open('projects/paris-baguette.html', '_blank')">
-                <source src="images/paris-baguette.mp4" type="video/mp4">
-              </video>
-              <div class="card-body">
-                <p class="card-year">Spring 2026 · Motion Graphics</p>
-                <p class="card-title-sm">Paris Baguette — Animated Logos</p>
-                <p class="card-desc">Three animated logo concepts using brand-aligned imagery — steaming coffee, falling beans, and café pastries — to communicate warmth and freshness.</p>
-                <div class="card-tags"><span class="tag">After Effects</span><span class="tag">Brand Design</span></div>
-              </div>
-              <button class="credits-toggle" onclick="toggleCredits(this)">
-                <span>Asset credits</span><span class="chev">›</span>
-              </button>
-              <div class="credits-panel">
-                <p class="credits-cat">Assets used</p>
-                <p>1. Coffee reference — <a href="https://share.google/CsjMO96jxajoHZdf6" target="_blank">Google Photos</a></p>
-                <p>2. Falling coffee beans — <a href="https://stock.adobe.com/images/falling-roasted-coffee-beans-isolated-on-transparent-background/777564079" target="_blank">Adobe Stock</a></p>
-                <p>3. Coffee with steam — <a href="https://stock.adobe.com/images/aromatic-cup-of-black-coffee-with-rising-steam-isolated-on-transparent-background-perfect-for-a-morning-pickmeup-or-a-relaxing-break/1729395268" target="_blank">Adobe Stock</a></p>
-                <p>4. White smoke — <a href="https://stock.adobe.com/images/white-smoke-transparent/563890924" target="_blank">Adobe Stock</a></p>
-                <p>5. White ceramic mug — <a href="https://stock.adobe.com/images/white-ceramic-mug-isolated-on-empty-background/527444697" target="_blank">Adobe Stock</a></p>
-                <p>6. Coffee bean — <a href="https://stock.adobe.com/images/coffee-bean-isolated-on-transparent-background-png/529259468" target="_blank">Adobe Stock</a></p>
-                <p>7. Cheese danish — <a href="https://stock.adobe.com/images/cheese-danish-pastry-top-view-isolated-on-transparent-background/868939824" target="_blank">Adobe Stock</a></p>
-                <p>8. Badge mockup — <a href="https://stock.adobe.com/templates/circle-round-pin-badge-mockup-template/1709363164" target="_blank">Adobe Stock</a></p>
-                <p>9. Chocolate cake — <a href="https://stock.adobe.com/images/chocolate-cake-with-chocolate-creame-isolated-on-white/536964018" target="_blank">Adobe Stock</a></p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
+      <p class="section-label" style="margin-bottom: 1.25rem;">Certifications</p>
+      <div class="certs-grid">
+        <a href="https://verify.skilljar.com/c/n5oktyyjz3j5" target="_blank" rel="noopener" class="cert-card">
+          <p class="cert-issuer">Anthropic · Jun 2026</p>
+          <p class="cert-name">AI Fluency Framework &amp; Foundations</p>
+          <span class="cert-link">View credential ↗</span>
+        </a>
+        <a href="https://verify.skilljar.com/c/bu9hj78acrw2" target="_blank" rel="noopener" class="cert-card">
+          <p class="cert-issuer">Anthropic · Jun 2026</p>
+          <p class="cert-name">Claude 101</p>
+          <span class="cert-link">View credential ↗</span>
+        </a>
+        <a href="https://learndigital.withgoogle.com/link/1qsdpcedm9s" target="_blank" rel="noopener" class="cert-card">
+          <p class="cert-issuer">Google Digital Garage · Jun 2021</p>
+          <p class="cert-name">Fundamentals of Digital Marketing</p>
+          <span class="cert-link">View credential ↗</span>
+        </a>
+        <a href="https://education.later.com/certificates/xovrawkpex" target="_blank" rel="noopener" class="cert-card">
+          <p class="cert-issuer">Later · Jun 2022</p>
+          <p class="cert-name">Later Product Pro Certification I &amp; II</p>
+          <span class="cert-link">View credential ↗</span>
+        </a>
+        <a href="https://codeinplace.stanford.edu/cip5/certificate/yssk7q" target="_blank" rel="noopener" class="cert-card">
+          <p class="cert-issuer">Stanford University · Jun 2025</p>
+          <p class="cert-name">Code in Place — Python Programming</p>
+          <span class="cert-link">View credential ↗</span>
+        </a>
       </div>
     </div>
   </section>
